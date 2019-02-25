@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ee">
+    <head>
+        <meta charset="utf-8">
+        <title>{{GetBoardName}}</title>
+    </head>
+    <body>
+        <h1>{{GetBoardName}}</h1>
+        <p>Welcome!</p>
+        <div>
+            <span>Browse Topics</span>
+            <ol id='topics'>
+                {{#GetTopics}}
+                    <li>{{.}}</li>
+                {{/GetTopics}}
+            </ol>
+        </div>
+    </body>
+</html>

@@ -1,7 +1,7 @@
 
 package wpd2.lab2;
 
-import wpd2.lab2.servlet.DemoServlet;
+import wpd2.lab2.servlet.*;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -36,6 +36,11 @@ public class Runner {
         //and adding it to the server
         DemoServlet demoServlet = new DemoServlet(shopName);
         handler.addServlet(new ServletHolder(demoServlet), "/shop/*");
+
+
+        MessageBoardServlet messageBoardServlet = new MessageBoardServlet();
+        handler.addServlet(new ServletHolder(messageBoardServlet), "/bulletin/board");
+
 
         //instantiating DefaultServlet and setting the requests that it responds to
         //and adding it to the server
