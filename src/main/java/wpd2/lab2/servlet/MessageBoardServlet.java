@@ -46,9 +46,11 @@ public class MessageBoardServlet extends BaseServlet {
         ArrayList list = new ArrayList<String>();
 
         int count = topics.size();
-        for (int i = 1; i > count; i++) {
+        for (int i = 1; i <= count; i++) {
             list.add(topics.get(i).GetName());
         }
+
+        mbvm.SetTopics(list);
 
         return mbvm;
     }
