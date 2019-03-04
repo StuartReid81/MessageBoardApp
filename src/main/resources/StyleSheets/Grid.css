@@ -1,0 +1,83 @@
+/* css grid layout based on youtube video @www.youtube.com/watch?v=HKcTOJxZ2Ts, column numbers, sizes and margins edited to my preferance. some other minor changes made */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
+    animation-duration: 0.5s;
+}
+
+.row {
+    padding: 10px;
+    width: 100%;
+    min-height: 1px;
+    float: left;
+}
+
+.col {
+    min-height: 40px;
+    border-radius: 8px;
+    margin-left: 1%;
+    margin-right: 1%;
+    float: left;
+}
+
+.col:first-child {
+    margin-left: 0px;
+}
+
+.col:last-child {
+    margin-right: 0px;
+}
+
+.col.one {
+    width: 8.2%;
+}
+
+.col.two {
+    width: 18.4%;
+}
+
+.col.three {
+    width: 28.6%;
+}
+
+.col.four {
+    width: 38.8%;
+}
+
+.col.five {
+    width: 49%;
+}
+
+.col.six {
+    width: 59.2%;
+}
+
+.col.seven {
+    width: 69.4%;
+}
+
+.col.eight {
+    width: 79.6%;
+}
+
+.col.nine {
+    width: 89.8%;
+}
+
+.col.ten {
+    width: 100%;
+}
+
+@media (max-width:768px) {
+    .col {
+        width: 100% !important;
+        margin: 5px 0px 5px 0px;
+    }
+}

@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="ee">
-    <head>
-        <meta charset="utf-8">
-        <title>{{GetBoardName}}</title>
-    </head>
+{{> htmlHeader}}
     <body>
-        <h1>{{GetBoardName}}</h1>
-        <p>Welcome!</p>
+    <div class="row">
+        <div class="col three"></div>
+        <div class="col four">
+            <h1>{{GetBoardName}}</h1>
+        </div>
+    </div>
+        <div class="TextCentre">
+            <p>Welcome!</p>
+            <h1>{{GetMessage}}</h1>
+        </div>
         <div>
-            <span>Browse Topics</span>
+            <div class="NavHeading">
+                <span>Browse Topics</span>
+            </div>
             <ol id='topics'>
                 {{#GetTopics}}
-                    <li>{{.}}</li>
+                    <li><h2><a href="/ViewTopic/?id={{GetId}}">{{GetName}}</a></h2></li>
                 {{/GetTopics}}
             </ol>
         </div>

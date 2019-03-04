@@ -41,6 +41,8 @@ public class Runner {
         MessageBoardServlet messageBoardServlet = new MessageBoardServlet();
         handler.addServlet(new ServletHolder(messageBoardServlet), "/bulletin/board");
 
+        TopicServlet topicServlet = new TopicServlet();
+        handler.addServlet(new ServletHolder(topicServlet), "/ViewTopic/*");
 
         //instantiating DefaultServlet and setting the requests that it responds to
         //and adding it to the server

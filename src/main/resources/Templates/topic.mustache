@@ -1,0 +1,21 @@
+{{> htmlHeader}}
+<body>
+<div class="Heading">
+    <h1>{{GetName}}</h1>
+    <h3>Created: {{GetCreatedOn}} by: {{GetAuthorName}}</h3>
+</div>
+<div class="TextCentre">
+    <h3>{{GetSignature}}</h3>
+</div>
+<div>
+    <div class="NavHeading">
+        <span>Comments</span>
+    </div>
+    <ol id='topics'>
+        {{#GetComments}}
+            <li><h2><a href="/ViewTopic/?id={{GetId}}">{{GetName}}</a></h2></li>
+        {{/GetComments}}
+    </ol>
+</div>
+</body>
+</html>

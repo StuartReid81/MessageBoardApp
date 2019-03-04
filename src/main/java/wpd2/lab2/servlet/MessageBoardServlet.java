@@ -26,7 +26,7 @@ public class MessageBoardServlet extends BaseServlet {
     //right now, setting the data for the page by hand, later that comes from a data store
     private Object getObject() {
         MessageBoard mb = new MessageBoard();
-        mb.SetBoardName("My Message Board");
+        mb.SetBoardName("Stuart's Message Board");
 
         HashMap<Integer, Topic> topics = new HashMap<>();
 
@@ -38,17 +38,22 @@ public class MessageBoardServlet extends BaseServlet {
 
         mb.SetTopics(topics);
 
+        mb.SetMessage("Never eat yellow snow!");
+
         MessageBoardViewModel mbvm = new MessageBoardViewModel();
 
         mbvm.SetBoardName(mb.GetBoardName());
         mbvm.SetMessage(mb.GetMessage());
 
-        ArrayList list = new ArrayList<String>();
+
+        ArrayList list = new ArrayList<Topic>();
 
         int count = topics.size();
-        for (int i = 1; i > count; i++) {
-            list.add(topics.get(i).GetName());
+        for (int i = 1; i <= count; i++) {
+            list.add(topics.get(i));
         }
+
+        mbvm.SetTopics(list);
 
         return mbvm;
     }
@@ -57,7 +62,6 @@ public class MessageBoardServlet extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         showView(response, MESSAGE_BOARD_TEMPLATE, getObject());
     }
-
 }
 
 
