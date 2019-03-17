@@ -43,7 +43,6 @@ public class MessageBoard {
     //overloaded
     public MessageBoard(int Id, String BoardName, String Message) { this.Id = Id; this.BoardName = BoardName; this.Message = Message; Topics = new HashMap<>(); }
 
-
     //Methods
     //Create
     public void AddTopic(Topic NewTopic) {
